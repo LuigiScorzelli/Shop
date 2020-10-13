@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <nav class="navbar navbar-expand-lg bg-light m-auto col-lg-8" style="height: 60px;">
+        <a class="navbar-brand text-dark pl-4 pr-4 button" [routerLink]="['/home']"> MY_SHOP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+              
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-dark" [routerLink]="['/home']"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" [routerLink]="['/products']">Prodotti</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-dark" href="#">
+                Categorie
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">
+                Contatti
+              </a>
+            </li>
+          </ul>
+                <!-- SEARCH -->
+                <!-- <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
