@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './detail/detail.component';
+// import { ProductsService } from './services/products.service';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SearchComponent,
     ProductsComponent,
+    DetailComponent,
 
   ],
   imports: [
@@ -22,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

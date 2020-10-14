@@ -1,28 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
   results: any = [];
-
-  productsService: any;
-  constructor() { 
-    this.results = [
-      {'title': 'prod1', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod2', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod3', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod4', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod5', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod6', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod7', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-      {'title': 'prod8', 'des': 'sajfajsvsa', 'info': 'sahdh'},
-    ]
+  // @Input() filter_prod : string;
+  // filter_results: any = [];
+  
+  constructor(private productsService: ProductsService) { 
+    this.results = this.productsService;
   }
-
-  ngOnInit(): void {
-  }
-
+  // filter(filter) {
+  //   console.log('filter', filter);
+  // }
 }

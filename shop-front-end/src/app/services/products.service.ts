@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductsService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {}
+  products: any =[];
+  category_products: any = [];
 
+  getAllProducts() {
+    this.http.get(`http://127.0.0.1:8000/api/home`).subscribe( (res: any )=> this.products  = res.dress);
   }
 
-  getProducts() {
-    return this.http.get('http://127.0.0.1:8000/api/home');
-  }
-
-  getProduct(id: string = '2') {
+  getDetailProduct(id: string) {
     return this.http.get(`http://127.0.0.1:8000/api/home/dress/${id}`);
   }
 }

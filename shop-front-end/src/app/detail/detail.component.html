@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-around flex-wrap" *ngIf="detail">
+  <div class="row d-flex flex-column text-uppercase align-items-center col-lg-12 py-4">
+    <h2 class="h2">Dettaglio prodotto</h2>
+    <h3 class="h3">{{ detail.title }}</h3>
+  </div>
+  <div class="card booking-card row" style="width: 40%;">
+    <div class="view overlay">
+      <img class="card-img-top pt-4" src="{{ detail.img }}" alt="Card-image" style="height: 200px;">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title font-weight-bold">{{ detail.title }}</h4>
+      <ul class="list-unstyled list-inline rating mb-0">
+        <li class="list-inline-item">Marca:<p class="text-muted"> {{ detail.brand }}</p></li>
+        <li class="list-inline-item">Categoria:<p class="text-muted"> {{ detail.category.name }}</p></li>
+        <li class="list-inline-item">Date:<p class="text-muted"> {{ detail.dateOfCreated }}</p></li>
+      </ul>
+      <p class="card-text">{{ detail.desc}}</p>
+      <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Home</a>
+    </div>
+
+  </div>
+</div>
+

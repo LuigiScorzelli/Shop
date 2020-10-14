@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  constructor() { }
+  @Input() filter_prod : any = '';
+  
+  constructor(private productsService: ProductsService) { 
+    
+  }
 
   ngOnInit(): void {
+    // this.results = this.productsService.products;
+    // console.log("search", this.results);
   }
 
 }

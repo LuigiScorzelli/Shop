@@ -26,14 +26,15 @@
               </a>
             </li>
           </ul>
-                <!-- SEARCH -->
-                <!-- <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
+          <!-- SEARCH -->
+          <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #query>
+            <button class="btn btn-outline-lightgrey my-2 my-sm-0" type="button" (click)="searchProduct(query.value)">Search</button>
+          </div>
         </div>
       </nav>
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+<!-- <app-search [filter_prod]="searchProduct()"></app-search> -->

@@ -23,9 +23,11 @@ use App\Models\Category;
 
 // Route per Home Page restituisce tutti i prodotti
 Route::get('/home', function (Clothe $clothe) {
+    // $category = Clothe::all();
+    // $a = $category;
     $data = [
         'dress' => Clothe::all(),
-        // 'category_dress' => Clothe::all()->category
+        // 'category_dress' => $a
     ];
     return response()->json($data);
 });
