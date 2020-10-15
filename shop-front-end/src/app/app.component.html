@@ -28,8 +28,24 @@
           </ul>
           <!-- SEARCH -->
           <div class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #query>
-            <button class="btn btn-outline-lightgrey my-2 my-sm-0" type="button" (click)="searchProduct(query.value)">Search</button>
+            <div>
+              <button class="btn btn-outline-lightgrey my-2 my-sm-0" type="button">
+                <a [routerLink]="['/user']" class="nav-link text-dark mr-4">Registrati</a> 
+              </button>
+            </div>
+            <div>
+              <button class="btn btn-outline-lightgrey my-2 my-sm-0" type="button">
+                <a *ngIf="!authService.isLoggedIn()" [routerLink]="['/login']" class="nav-link text-dark">Login</a> 
+                <a *ngIf="authService.isLoggedIn()" class="nav-link text-dark" (click)="authService.logout()">Logout</a> 
+              </button>
+            </div>
+            <!-- <app-search></app-search> -->
+            <!-- <form>
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #query>
+              <button class="btn btn-outline-lightgrey my-2 my-sm-0" type="button" (click)="searchProduct(query)">
+                <a [routerLink]="['/search']" class="nav-link text-dark">Search</a> 
+              </button>
+            </form> -->
           </div>
         </div>
       </nav>
@@ -37,4 +53,3 @@
     </div>
   </div>
 </div>
-<!-- <app-search [filter_prod]="searchProduct()"></app-search> -->

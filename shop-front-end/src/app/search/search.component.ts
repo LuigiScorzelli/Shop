@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -7,15 +7,18 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Input() filter_prod : any = '';
-  
+  @Output() search : EventEmitter<any> = new EventEmitter<any>();
+  res_filter : any = [];
+ 
   constructor(private productsService: ProductsService) { 
     
   }
 
   ngOnInit(): void {
-    // this.results = this.productsService.products;
-    // console.log("search", this.results);
   }
 
+  searchProduct(query: any) {
+    this.res_filter = this.productsService.products.filter( (product: any) =>  product.title.includes(query.value));
+    this.search.emit(this.res_filter);
+  }
 }

@@ -1,25 +1,24 @@
-<!-- <div class="container d-flex justify-content-around">
-  <div class="card booking-card" style="width: 40%;">
-    <div class="view overlay">
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title font-weight-bold"><a>La Sirena restaurant</a></h4>
-      <ul class="list-unstyled list-inline rating mb-0">
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-        <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-        <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
-      </ul>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Button</a>
-
-    </div>
-
+<div class="container d-flex flex-wrap pt-4" *ngIf="results">
+  <div class="row">
+      <div class="card booking-card mb-4 col-xl-4 col-12" style="width: 30%;" *ngFor="let res of results.products">
+        <div class="view overlay">
+          <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          
+          <h4 class="card-title font-weight-bold text-center">{{ res.title }}</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>price:</b> {{ res.price }}</li>
+            <li class="list-group-item"><b>taglie:</b> {{ res.sizes }}</li>
+            <li class="list-group-item"><b>categoria:</b> </li>
+          </ul>
+          <p class="card-text">{{ res.description }}</p>
+          <button type="button" [routerLink]="['/product', res.id]" class="btn btn-outline-success">Dettaglio</button>
+  
+        </div>
+      </div>
   </div>
-</div> -->
+</div>

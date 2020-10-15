@@ -14,31 +14,5 @@
     </div>
   </div>
   <!-- ! carousel -->
-<!-- <p>dfe {{ results.products[1].title }}</p> -->
-  <!-- card -->
-  <div class="container d-flex flex-wrap pt-4" *ngIf="results">
-    <div class="row">
-        <div class="card booking-card mb-4 col-xl-4 col-12" style="width: 30%;" *ngFor="let res of results.products">
-          <div class="view overlay">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <div class="card-body">
-            
-            <h4 class="card-title font-weight-bold text-center">{{ res.title }}</h4>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>price:</b> {{ res.price }}</li>
-              <li class="list-group-item"><b>taglie:</b> {{ res.sizes }}</li>
-              <li class="list-group-item"><b>categoria:</b> </li>
-            </ul>
-            <p class="card-text">{{ res.description }}</p>
-            <button type="button" [routerLink]="['/product', res.id]" class="btn btn-outline-success">Dettaglio</button>
-    
-          </div>
-        </div>
-    </div>
-  </div>
-
+  <app-products></app-products>
 </div>

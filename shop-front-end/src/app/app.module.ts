@@ -8,7 +8,12 @@ import { SearchComponent } from './search/search.component';
 import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
-// import { ProductsService } from './services/products.service';
+import { LoginComponent } from './login/login.component';
+import { ProductsService } from './services/products.service';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -18,15 +23,20 @@ import { DetailComponent } from './detail/detail.component';
     SearchComponent,
     ProductsComponent,
     DetailComponent,
+    LoginComponent,
+    AdminComponent,
+    UserComponent,
 
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
   providers: [
-    // ProductsService
+    ProductsService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

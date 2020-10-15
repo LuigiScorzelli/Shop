@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  getUser(): string {
+    return localStorage.getItem('username');
+  }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('username') !== null;
+  }
+  constructor() { }
+  login(username: string, password: string): boolean{
+    if(username === 'user' && password === 'pas') {
+      localStorage.setItem('username', username);
+      return true;
+    }
+    if(username === 'admin' && password === 'abc') {
+      localStorage.setItem('username', username);
+      return true;
+    }
+    return false;
+  }
+
+  logout(): void {
+    localStorage.removeItem('username');
+  }
+}

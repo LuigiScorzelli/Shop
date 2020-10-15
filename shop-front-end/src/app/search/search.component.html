@@ -1,1 +1,37 @@
-<p>{{ filter_prod }}</p>
+<div class=" container mb-4"> 
+  <h2 class="title text-center">Ricerca per titolo</h2>
+  <div class="d-flex">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #query>
+      <button class="btn btn-success" type="button" (click)="searchProduct(query)">
+        <a class="nav-link text-dark">Search</a> 
+      </button>
+  </div>
+</div>
+<div class="mb-4" *ngIf="res_filter.length == 0"> 
+  <app-products></app-products>
+</div>
+<div class="container mb-4 text-center" *ngIf="res_filter.length != 0"> 
+  <h1> I risultati della tua ricerca </h1>
+  <div class="row">
+    <div class="card booking-card mb-4 col-xl-4 col-12" style="width: 30%;" *ngFor="let res of res_filter">
+      <div class="view overlay">
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        
+        <h4 class="card-title font-weight-bold text-center">{{ res.title }}</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>price:</b> {{ res.price }}</li>
+          <li class="list-group-item"><b>taglie:</b> {{ res.sizes }}</li>
+          <li class="list-group-item"><b>categoria:</b> </li>
+        </ul>
+        <p class="card-text">{{ res.description }}</p>
+        <button type="button" [routerLink]="['/product', res.id]" class="btn btn-outline-success">Dettaglio</button>
+
+      </div>
+    </div>
+</div>
+</div>

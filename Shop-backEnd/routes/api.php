@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Clothe;
 use App\Models\Category;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,13 @@ Route::get('/home/dress/{id}', function (Clothe $clothe, $id) {
         'category_dress' => Clothe::find($id)->category
     ];
     return response()->json($data);
+});
+
+Route::post('/user', function (Request $request) {
+    $data = $request->all();
+    $newProd = new User();
+    $newProd->fill($data);
+    $newProd->save();
+
+    return response()->json('successo effettuato!');
 });
